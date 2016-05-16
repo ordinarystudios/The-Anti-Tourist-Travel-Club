@@ -1,0 +1,322 @@
+// bower:scss
+// endbower
+
+$navColor: #000;
+$navColor--scrolled: #000;
+$bodyColor: #000;
+$actionColor: orange;
+$fontSize-body: 150%;
+$fontSize-small: calc(1rem);
+$fontSize-large: calc(1rem + 1vw);
+$fontSize-extraLarge: calc(1rem + 1.5vw);
+$fontSize-extraExtraLarge: calc(1rem + 5vw);
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: FoundersGroteskText-Regular;
+  font-size: $fontSize-body;
+  line-height: 1.2;
+  color: $bodyColor;
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: 1.5s;
+}
+@-webkit-keyframes welcome {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; }
+}
+
+.header {
+  width: 100%;
+  padding: 5vh 5vw;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+
+  a {
+    font-size: $fontSize-large;
+    color: $navColor;
+    text-decoration: none;
+  }
+
+  h1 a {
+    font-family: FoundersGroteskText-Semibold;
+    width: 50%;
+  }
+
+  &.is-scrolled {
+    background: #fff;
+    position: fixed;
+  }
+}
+
+.nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  a {
+    font-family: FoundersGroteskText-Light;
+    font-size: $fontSize-large;
+  }
+}
+
+section {
+  padding: 5vh 5vw;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  font-size: $fontSize-extraExtraLarge;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+
+  span {
+    font-size: 0.6em;
+  }
+}
+
+h2 {
+  font-size: $fontSize-large;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: $fontSize-small;
+  margin-bottom: 0.5em;
+}
+
+.about {
+  &-description {
+    padding: 2vh 0;
+    p {
+      font-size: $fontSize-extraLarge;
+    }
+  }
+  &-whatsIncluded {
+    padding: 2vh 0;
+    ul {
+      column-count: 2;
+      @media (max-width: 575px) {
+        column-count: 1;
+      }
+    }
+
+    li {
+      list-style: none;
+      padding-right: 10vw;
+      padding-left: 1em;
+      line-height: 1.5em;
+      text-indent: 0;
+      position: relative;
+      &:before {
+        content: "*";
+        width: 0;
+        display: block;
+        overflow: visible;
+        float: left;
+        left: -1em;
+        top: 0.2em;
+        position: relative;
+      }
+
+      @media (max-width: 575px) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  }
+  &-total {
+    padding: 2vh 0;
+  }
+}
+
+.itinerary {
+  &-day {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 5vh 0;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+
+      .itinerary-day-copy {
+        padding-left: 5vw;
+        padding-right: 0;
+
+        @media (max-width: 575px) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &-copy {
+      width: 50%;
+      padding-right: 5vw;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      @media (max-width: 575px) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    &-image {
+      width: 50%;
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.apply {
+  label {
+    width: 100%;
+
+    &.question {
+      float: left;
+      margin-bottom: .5em;
+    }
+  }
+  input, textarea {
+    display: block;
+    width: 100%;
+    border: solid 2px $bodyColor;
+    padding: 2vh 2vw;
+    font-size: $fontSize-large;
+    font-family: inherit;
+    transition: border 0.3s ease;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: solid 2px $actionColor;
+      transition: border 0.3s ease;
+    }
+  }
+  .inputGroup {
+    float: left;
+    width: 100%;
+    display: block;
+    margin: 2vh 0;
+  }
+  .radioButton {
+    width: 50%;
+    float: left;
+
+    display: flex;
+
+    input {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-5px, 4px);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: white;
+        border: solid 2px $bodyColor;
+        transition: all 0.3s ease;
+      }
+      &:checked {
+        &:before {
+          background: $actionColor;
+          border-color: $actionColor;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+    label {
+      line-height: 40px;
+    }
+  }
+}
+
+.button {
+  background: $bodyColor;
+  border-radius: 3px;
+  padding: 20px 30px;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1;
+  color: white;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background: $actionColor;
+    transition: all 0.3s ease;
+  }
+}
