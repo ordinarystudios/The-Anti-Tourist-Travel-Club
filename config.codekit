@@ -222,6 +222,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/pane7-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3.30588e+06,
+		"inputAbbreviatedPath": "\/images\/pane7-1.jpg",
+		"outputAbbreviatedPath": "\/images\/pane7-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/pane7-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 380636,
+		"inputAbbreviatedPath": "\/images\/pane7-2.jpg",
+		"outputAbbreviatedPath": "\/images\/pane7-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/pane7-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 481262,
+		"inputAbbreviatedPath": "\/images\/pane7-3.jpg",
+		"outputAbbreviatedPath": "\/images\/pane7-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/pane7-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 141562,
+		"inputAbbreviatedPath": "\/images\/pane7-4.jpg",
+		"outputAbbreviatedPath": "\/images\/pane7-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/pane8-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
