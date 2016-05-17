@@ -1,15 +1,52 @@
 // bower:scss
 // endbower
 
+@font-face {
+    font-family: 'tourist';
+    src: url('../fonts/tourist-light-webfont.eot');
+    src: url('../fonts/tourist-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tourist-light-webfont.woff2') format('woff2'),
+         url('../fonts/tourist-light-webfont.woff') format('woff'),
+         url('../fonts/tourist-light-webfont.ttf') format('truetype'),
+         url('../fonts/tourist-light-webfont.svg#touristlight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tourist';
+    src: url('../fonts/tourist-regular-webfont.eot');
+    src: url('../fonts/tourist-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tourist-regular-webfont.woff2') format('woff2'),
+         url('../fonts/tourist-regular-webfont.woff') format('woff'),
+         url('../fonts/tourist-regular-webfont.ttf') format('truetype'),
+         url('../fonts/tourist-regular-webfont.svg#touristregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tourist';
+    src: url('../fonts/tourist-semibold-webfont.eot');
+    src: url('../fonts/tourist-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tourist-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/tourist-semibold-webfont.woff') format('woff'),
+         url('../fonts/tourist-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/tourist-semibold-webfont.svg#touristsemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
 $navColor: #fff;
 $navColor--scrolled: #000;
 $bodyColor: #000;
-$actionColor: rgb(0,255,255);
+$actionColor: blue;
 $fontSize-body: 150%;
 $fontSize-small: calc(1rem);
 $fontSize-large: calc(1rem + 1vw);
 $fontSize-extraLarge: calc(1rem + 1.5vw);
 $fontSize-extraExtraLarge: calc(1rem + 5vw);
+$fontFamily: 'tourist', -apple-system, sans-serif;
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -71,8 +108,18 @@ table {
 	border-spacing: 0;
 }
 
+input, textarea, button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 body {
-  font-family: FoundersGroteskText-Regular;
+  font-family: $fontFamily ;
   font-size: $fontSize-body;
   line-height: 1.2;
   color: $bodyColor;
@@ -101,7 +148,8 @@ body {
   }
 
   h1 a {
-    font-family: FoundersGroteskText-Semibold;
+    font-family: $fontFamily;
+    font-weight: 600;
     width: 50%;
   }
 
@@ -118,12 +166,13 @@ body {
   flex-wrap: wrap;
 
   a {
-    font-family: FoundersGroteskText-Light;
+    font-family: $fontFamily;
+    font-weight: 200;
     font-size: $fontSize-large;
   }
 }
 
-section {
+section, footer {
   padding: 5vh 5vw;
 }
 
@@ -237,74 +286,87 @@ h3 {
   }
 }
 
-.apply {
-  label {
-    width: 100%;
+.hide {
+  display: none;
+  visibility: hidden;
+}
 
-    &.question {
-      float: left;
-      margin-bottom: .5em;
-    }
-  }
-  input, textarea {
-    display: block;
-    width: 100%;
-    border: solid 2px $bodyColor;
-    padding: 2vh 2vw;
-    font-size: $fontSize-large;
-    font-family: inherit;
-    transition: border 0.3s ease;
+label, legend {
+  width: 100%;
 
-    &:focus {
-      outline: none;
-      box-shadow: none;
-      border: solid 2px $actionColor;
-      transition: border 0.3s ease;
-    }
-  }
-  .inputGroup {
+  &.question {
     float: left;
-    width: 100%;
-    display: block;
-    margin: 2vh 0;
-  }
-  .radioButton {
-    width: 50%;
-    float: left;
-
-    display: flex;
-
-    input {
-      width: 40px;
-      height: 40px;
-      position: relative;
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-5px, 4px);
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: white;
-        border: solid 2px $bodyColor;
-        transition: all 0.3s ease;
-      }
-      &:checked {
-        &:before {
-          background: $actionColor;
-          border-color: $actionColor;
-          transition: all 0.3s ease;
-        }
-      }
-    }
-    label {
-      line-height: 40px;
-    }
+    margin-bottom: .5em;
   }
 }
+input, textarea {
+  display: block;
+  width: 100%;
+  border: solid 2px $bodyColor;
+  padding: 2vh 2vw;
+  font-size: $fontSize-large;
+  font-family: inherit;
+  transition: border 0.3s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: solid 2px $actionColor;
+    transition: border 0.3s ease;
+  }
+}
+.inputGroup {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 2vh 0;
+}
+.name input {
+  width: 49%;
+  margin-right: 2%;
+  float: left;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.radioButton {
+  width: 50%;
+  float: left;
+
+  display: flex;
+
+  input {
+    width: 40px;
+    border: none;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-5px, 4px);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: white;
+      border: solid 2px $bodyColor;
+      transition: all 0.3s ease;
+    }
+    &:checked {
+      &:before {
+        background: $actionColor;
+        border-color: $actionColor;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  label {
+    line-height: 40px;
+  }
+}
+
 
 .button {
   background: $bodyColor;
@@ -316,10 +378,222 @@ h3 {
   line-height: 1;
   color: white;
   transition: all 0.3s ease;
+  width: auto;
 
   &:hover {
     cursor: pointer;
     background: $actionColor;
     transition: all 0.3s ease;
   }
+}
+
+$slick-font-path: "./fonts/" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: $bodyColor !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    &:hover, &:focus {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &:before {
+        font-size: 20px;
+        line-height: 1;
+        color: $slick-arrow-color;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: -25px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: $slick-prev-character;
+        [dir="rtl"] & {
+            content: $slick-next-character;
+        }
+    }
+}
+
+.slick-next {
+    right: -25px;
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+    &:before {
+        content: $slick-next-character;
+        [dir="rtl"] & {
+            content: $slick-prev-character;
+        }
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 20px;
+            width: 20px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 20px;
+                height: 20px;
+                font-size: $slick-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: $slick-dot-color;
+                opacity: $slick-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.slick-active button:before {
+            color: $slick-dot-color-active;
+            opacity: $slick-opacity-default;
+        }
+    }
+}
+
+.carousel {
+  position: relative;
+  img {
+    max-height: 600px;
+    width: auto;
+    &:hover {
+      cursor: -webkit-grab;
+      cursor: grab;
+    }
+    &:active {
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.slick-list.draggable {
+    overflow: hidden;
+    width: 98%;
+    margin: 0 auto;
+}
+
+
+footer {
+  background: rgba(0,0,0,0.1);
+  overflow: auto;
+  margin-top: 10vh;
+  float: left;
+  width: 100%;
 }
