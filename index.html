@@ -168,30 +168,60 @@
         </div>
       </article>
     </section>
+
+
     <section id="apply" class="apply">
       <h2>Apply for the first trip:</h2>
-      <form class="" action="index.html" method="post">
-        <div class="inputGroup">
-          <label class="question" for="name">Full Name: First &amp; Last</label>
-          <input type="text" placeholder="Your name here ...">
+
+      <form id="form2" name="form2" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://ordinary.wufoo.com/forms/m1cb3j481gfulq6/#public">
+
+        <div id="foli1" class="name inputGroup">
+          <label class="question" id="title1" for="Field1">Full Name</label>
+          <input id="Field1" name="Field1" type="text" placeholder="First" value="" tabindex="1"/>
+          <input id="Field2" name="Field2" type="text" placeholder="Last" value="" tabindex="2" />
         </div>
-        <div class="inputGroup">
-          <label class="question" for="email">Email</label>
-          <input name="email" type="email" placeholder="you@gmail.com">
+
+        <div id="foli5" class="inputGroup">
+          <label class="question" id="title5" for="Field5">Email</label>
+          <input id="Field5" name="Field5" spellcheck="false" type="email" value="" maxlength="255" tabindex="3" placeholder="you@email.com">
         </div>
-        <div class="inputGroup">
-          <label class="question" for="getout">What are you looking to get out of this trip? </label>
-          <textarea name="getout" placeholder="Take in the culture, lay by the sea, see ancient artifacts, etc."></textarea>
+
+        <div id="foli7" class="inputGroup">
+          <label id="title7" for="Field7" class="question">What are you looking to get out of this trip? </label>
+          <textarea id="Field7" name="Field7" spellcheck="true" tabindex="4" onkeyup="" placeholder="Take in the culture, lay by the sea, see ancient artifacts, etc."></textarea>
         </div>
-        <div class="inputGroup">
-          <label class="question" for="mostinterested">What are you most interested in?</label>
-          <div class="radioButton"><input id="culture" type="radio" name="mostinterested" value="culture"><label for="culture">Modern Culture</label></div>
-          <div class="radioButton"><input id="history" type="radio" name="mostinterested" value="history"><label for="history">Ancient History</label></div>
-          <div class="radioButton"><input id="beach" type="radio" name="mostinterested" value="beach"><label for="beach">The Beach</label></div>
-          <div class="radioButton"><input id="friends" type="radio" name="mostinterested" value="people"><label for="friends">New People</label></div>
+
+        <div id="foli9" class="inputGroup">
+          <fieldset>
+            <legend id="title9" class="question" for="mostinterested">What are you most interested in?</legend>
+            <input id="radioDefault_9" name="Field9" type="hidden" value="" />
+            <div class="radioButton">
+              <input id="Field9_0" name="Field9" type="radio" value="Modern Culture" tabindex="5">
+              <label for="Field9_0">Modern Culture</label>
+            </div>
+            <div class="radioButton">
+              <input id="Field9_1" name="Field9" type="radio" value="Ancient History" tabindex="6">
+              <label for="Field9_1">Ancient History</label>
+            </div>
+            <div class="radioButton">
+              <input id="Field9_2" name="Field9" type="radio" value="The Beach" tabindex="7">
+              <label for="Field9_2">The Beach</label>
+            </div>
+            <div class="radioButton">
+              <input id="Field9_3" name="Field9" type="radio" value="New Friends" tabindex="8">
+              <label for="Field9_3">New Friends</label>
+            </div>
+          </fieldset>
         </div>
+
         <div class="inputGroup">
-          <button class="button" type="submit">Let's go!</button>
+          <input id="saveForm" name="saveForm" class="button submit" type="submit" value="Submit" />
+
+      		<div class="hide">
+      			<label for="comment">Do Not Fill This Out</label>
+      			<textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+      			<input type="hidden" id="idstamp" name="idstamp" value="MfcsSwaRIUgyP2GPariwfecOMsCyXgXcxfVWOG7cNsI=" />
+      		</div>
         </div>
       </form>
     </section>
@@ -199,6 +229,7 @@
       <p>&copy; 2016 Rami — site made by <a href="//ordinarystudios.com">Ordinary Studios</a>.
     </footer>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="scripts/wufoo.js"></script>
     <script>
     /*
     Slick

@@ -108,6 +108,16 @@ table {
 	border-spacing: 0;
 }
 
+input, textarea, button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 body {
   font-family: $fontFamily ;
   font-size: $fontSize-body;
@@ -276,74 +286,87 @@ h3 {
   }
 }
 
-.apply {
-  label {
-    width: 100%;
+.hide {
+  display: none;
+  visibility: hidden;
+}
 
-    &.question {
-      float: left;
-      margin-bottom: .5em;
-    }
-  }
-  input, textarea {
-    display: block;
-    width: 100%;
-    border: solid 2px $bodyColor;
-    padding: 2vh 2vw;
-    font-size: $fontSize-large;
-    font-family: inherit;
-    transition: border 0.3s ease;
+label, legend {
+  width: 100%;
 
-    &:focus {
-      outline: none;
-      box-shadow: none;
-      border: solid 2px $actionColor;
-      transition: border 0.3s ease;
-    }
-  }
-  .inputGroup {
+  &.question {
     float: left;
-    width: 100%;
-    display: block;
-    margin: 2vh 0;
-  }
-  .radioButton {
-    width: 50%;
-    float: left;
-
-    display: flex;
-
-    input {
-      width: 40px;
-      height: 40px;
-      position: relative;
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-5px, 4px);
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: white;
-        border: solid 2px $bodyColor;
-        transition: all 0.3s ease;
-      }
-      &:checked {
-        &:before {
-          background: $actionColor;
-          border-color: $actionColor;
-          transition: all 0.3s ease;
-        }
-      }
-    }
-    label {
-      line-height: 40px;
-    }
+    margin-bottom: .5em;
   }
 }
+input, textarea {
+  display: block;
+  width: 100%;
+  border: solid 2px $bodyColor;
+  padding: 2vh 2vw;
+  font-size: $fontSize-large;
+  font-family: inherit;
+  transition: border 0.3s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: solid 2px $actionColor;
+    transition: border 0.3s ease;
+  }
+}
+.inputGroup {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 2vh 0;
+}
+.name input {
+  width: 49%;
+  margin-right: 2%;
+  float: left;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.radioButton {
+  width: 50%;
+  float: left;
+
+  display: flex;
+
+  input {
+    width: 40px;
+    border: none;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-5px, 4px);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: white;
+      border: solid 2px $bodyColor;
+      transition: all 0.3s ease;
+    }
+    &:checked {
+      &:before {
+        background: $actionColor;
+        border-color: $actionColor;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  label {
+    line-height: 40px;
+  }
+}
+
 
 .button {
   background: $bodyColor;
@@ -355,6 +378,7 @@ h3 {
   line-height: 1;
   color: white;
   transition: all 0.3s ease;
+  width: auto;
 
   &:hover {
     cursor: pointer;
