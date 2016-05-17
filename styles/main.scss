@@ -379,11 +379,17 @@ input, textarea {
   color: white;
   transition: all 0.3s ease;
   width: auto;
+  border: none;
 
   &:hover {
     cursor: pointer;
     background: $actionColor;
     transition: all 0.3s ease;
+    border: none;
+  }
+
+  &:active {
+    border: none;
   }
 }
 

@@ -285,11 +285,15 @@ input, textarea {
   line-height: 1;
   color: white;
   transition: all 0.3s ease;
-  width: auto; }
+  width: auto;
+  border: none; }
   .button:hover {
     cursor: pointer;
     background: blue;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    border: none; }
+  .button:active {
+    border: none; }
 
 /* Slider */
 .slick-loading .slick-list {
